@@ -1,0 +1,31 @@
+{
+  "name": "@korawit.ro/weather-forecast",
+  "version": "1.0.0",
+  "description": "The Dark Sky API replacement to display weather using the free OpenWeatherMap API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepublish": "tsc",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://korawit.ro@github.com/korawit-ro/weather-forecast.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/korawit-ro/weather-forecast/issues"
+  },
+  "homepage": "https://github.com/korawit-ro/weather-forecast#readme",
+  "devDependencies": {
+    "@types/superagent": "^4.1.16",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "cache-manager": "^5.2.0",
+    "dayjs": "^1.11.7",
+    "superagent": "^8.0.9"
+  }
+}
