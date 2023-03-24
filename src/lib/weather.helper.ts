@@ -10,6 +10,9 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.extend(customParseFormat);
 
+const KPH2MS = (val: number) => parseFloat((val / 3.6).toFixed(1));
+const Percent2Descimal = (val: number) => parseFloat((val / 100).toFixed(1));
+
 export function toDarkSkyAPI(weatherData: WeatherAPICom): DarkSkyAPI {
   const fCurrent = weatherData.forecast.forecastday[0];
   const fTomorrow = weatherData.forecast.forecastday[1];
@@ -61,8 +64,8 @@ export function toDarkSkyAPI(weatherData: WeatherAPICom): DarkSkyAPI {
       icon: MappedDarkSkyIcon(selectHour.condition.code, currentDayjs.unix(), sunriseTime, sunsetTime),
       newIcon: selectHour.condition.icon,
       temperature: selectHour.temp_c,
-      humidity: selectHour.humidity,
-      windSpeed: selectHour.wind_kph,
+      humidity: Percent2Descimal(selectHour.humidity),
+      windSpeed: KPH2MS(selectHour.wind_kph),
     },
     hourly: {
       summary: weatherData.current.condition.text,
@@ -78,8 +81,8 @@ export function toDarkSkyAPI(weatherData: WeatherAPICom): DarkSkyAPI {
         icon: MappedDarkSkyIcon(hData.condition.code, hData.time_epoch, sunriseTime, sunsetTime),
         newIcon: hData.condition.icon,
         temperature: hData.temp_c,
-        humidity: hData.humidity,
-        windSpeed: hData.wind_kph,
+        humidity: Percent2Descimal(hData.humidity),
+        windSpeed: KPH2MS(hData.wind_kph),
       })),
     },
     daily: {
