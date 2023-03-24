@@ -1,7 +1,7 @@
 {
   "name": "@korawit.ro/weather-forecast",
-  "version": "1.0.0",
-  "description": "The Dark Sky API replacement to display weather using the free OpenWeatherMap API",
+  "version": "1.0.2",
+  "description": "The Dark Sky API replacement to display weather using the free Weatherapi.com API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
