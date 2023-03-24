@@ -66,7 +66,7 @@ export function toDarkSkyAPI(weatherData: WeatherAPICom): DarkSkyAPI {
     },
     hourly: {
       summary: weatherData.current.condition.text,
-      icon: weatherData.current.condition.icon,
+      icon: MappedDarkSkyIcon(weatherData.current.condition.code, currentDayjs.unix(), sunriseTime, sunsetTime),
       newIcon: weatherData.current.condition.icon,
       data: hourList.map((hData) => ({
         time: hData.time_epoch,
